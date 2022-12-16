@@ -109,11 +109,13 @@ Optional argument DAY Load this day instead.  Defaults to today."
 (defun advent--tag-default ()
   "Copied version of grep-tag-default."
   (or (and transient-mark-mode mark-active
-	   (/= (point) (mark))
-	   (buffer-substring-no-properties (point) (mark)))
+           (/= (point) (mark))
+           (buffer-substring-no-properties (point) (mark)))
       (funcall (or find-tag-default-function
-		   (get major-mode 'find-tag-default-function)
-		   'find-tag-default))
+                   (get major-mode 'find-tag-default-function)
+                   'find-tag-default))
       ""))
+
+(provide 'advent)
 
 ;;; advent.el ends here
